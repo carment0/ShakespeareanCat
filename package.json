@@ -1,0 +1,30 @@
+{
+  "name": "ShakespeareanCat",
+  "version": "1.0.0",
+  "description": "## Background One of the most powerful algorithmic process is found in nature itself. Genetic Algorithms are search based algorithms based on the concepts of natural selection and genetics. It is frequently used to find optimal or near-optimal solutions to difficult problems which otherwise would take a lifetime to solve. By evaluating how 'fit' a guess is, the program can \"evolve\" the answer accordingly.",
+  "main": "dna.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "webpack": "webpack --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/carment0/ShakespeareanCat-.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/carment0/ShakespeareanCat-/issues"
+  },
+  "homepage": "https://github.com/carment0/ShakespeareanCat-#readme",
+  "dependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "webpack": "^3.6.0"
+  }
+}
