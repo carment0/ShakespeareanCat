@@ -5,7 +5,7 @@ import ReactDOM from 'react-dom';
 class SimpleComponent extends React.Component {
 	render() {
 		return (
-			<h2>I am a SimpleComponent!</h2>
+			<h2>Shakespearean Cat</h2>
 		);
 	}
 }

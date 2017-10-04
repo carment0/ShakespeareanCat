@@ -32,6 +32,6 @@ There will be four scripts involved in this project:
 
 ## Implementation Timeline
 D1:  Write a basic entry file and the bare bones of all 4 scripts outlined above. Review genetics algorithms.
-D2: Build out sketch and population
-D3: Build out DNA
+D2: Build out DNA and population
+D3: Build out sketch
 D4: Create controls for app and edit css
