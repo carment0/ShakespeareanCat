@@ -24,14 +24,14 @@ In addition, this project will include:
 ![alt text](https://raw.githubusercontent.com/carment0/ShakespeareanCat-/master/images/New%20Mockup%202.png "Logo Title Text 1")
 
 ## Architecture and Technologies
-There will be four scripts involved in this project:
+There will be three scripts involved in this project:
 - population.js - manage the array of all the element of the population, calculate the fitness values, selection functions
 - sketch.js - setup initialization state, looping state
 - DNA.js - function for mutation, store the character of each phrase
 
 
 ## Implementation Timeline
-D1:  Write a basic entry file and the bare bones of all 4 scripts outlined above. Review genetics algorithms.
-D2: Build out DNA and population
-D3: Build out sketch
-D4: Create controls for app and edit css
+- D1:  Write a basic entry file and the bare bones of all 3 scripts outlined above. Review genetics algorithms.
+- D2: Build out sketch and population
+- D3: Build out DNA
+- D4: Create controls for app and edit css
