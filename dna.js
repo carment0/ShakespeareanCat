@@ -16,16 +16,14 @@ class DNA {
         score++;
       }
     }
-    console.log(score);
-    console.log(target.length);
-    this.fitness = score / target.length;
+    this.fitness = (score / target.length) * 100;
   }
 
-  phrase() {
+  getPhrase() {
     return this.genes.join("");
   }
 
-  recombine(partner) {
+  crossover(partner) {
     let geneLength = this.genes.length;
     let offspring = new DNA(geneLength);
     let divider = Math.floor(Math.random() * (geneLength - 0)) + 0;
@@ -41,9 +39,9 @@ class DNA {
     return offspring;
   }
 
-  mutationLevel(mutationPercentage) {
+  mutation(mutationRate) {
     for (let i = 0; i < this.genes.length; i++) {
-      if (Math.random() < mutationPercentage) {
+      if (Math.random() < mutationRate) {
         let randomChar = Math.floor(Math.random() * 126) + 32;
         this.genes[i] = String.fromCharCode(randomChar);
       }
