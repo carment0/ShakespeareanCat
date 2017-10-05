@@ -1,11 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Data from './components/data';
+import Phrase from './components/phrase';
+import Result from './components/result';
 
-// Creates a re-usable `SimpleComponent` class.
 class SimpleComponent extends React.Component {
 	render() {
 		return (
-			<h2>Shakespearean Cat</h2>
+			<div>
+				<h2>Shakespearean Cat</h2>
+				<Phrase/>
+				<Data/>
+				<Result/>
+			</div>
 		);
 	}
 }
