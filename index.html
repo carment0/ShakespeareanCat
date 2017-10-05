@@ -2,10 +2,57 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="./stylesheet/reset.scss" type="text/css"/>
+    <link rel="stylesheet" href="./stylesheet/main.scss" type="text/css"/>
     <title>Shakespearean Cat</title>
     <script src="bundle.js"></script>
+    </style>
   </head>
   <body>
-    <div id ="root"/>
+    <div class="header-bar">
+      <h1 class="title">Shakespearean Cat</h1>
+      <button class="button" type="button">About</button>
+    </div>
+
+    <div class="main">
+      <div class="main-phrase">
+        <div>
+          <h3 class="phrase-box">Enter your phrase or use default</h3>
+          <form>
+            <textarea class="user-phrase">To meow, or not to meow, that is the meowstion.</textarea>
+          </form>
+        </div>
+        <div>
+          <h3 class="phrase-box">Parameters</h3>
+          <br>
+          <h4>Total Generation:</h4>
+          <br>
+          <h4>Average Fitness:</h4>
+          <br>
+          <h4>Total Popultion:</h4>
+          <br>
+          <h4>Mutation Rate:</h4>
+        </div>
+      </div>
+      <div class="result">
+        <div >
+          <table style="overflow-x:auto;">
+            <tr>
+              <th class="table-title">Generation</th>
+              <th class="table-title">Fitness</th>
+              <th>Best Phrase</th>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>24%</td>
+              <td>"uhhhkfgjlksdfjgsjdfgsdfl;g"</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <button class="button" type="button">Start</button>
+    </div>
   </body>
 </html>
