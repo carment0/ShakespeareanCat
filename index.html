@@ -2,11 +2,10 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="./stylesheet/reset.scss" type="text/css"/>
-    <link rel="stylesheet" href="./stylesheet/main.scss" type="text/css"/>
+    <link rel="stylesheet" href="./stylesheet/reset.css" type="text/css"/>
+    <link rel="stylesheet" href="./stylesheet/main.css" type="text/css"/>
     <title>Shakespearean Cat</title>
-    <script src="bundle.js"></script>
-    </style>
+    <script type="application/javascript" src="./bundle.js"></script>
   </head>
   <body>
     <div class="header-bar">
@@ -36,7 +35,7 @@
       </div>
       <div class="result">
         <div >
-          <table style="overflow-x:auto;">
+          <table style="overflow-x:auto;" id="table">
             <tr>
               <th class="table-title">Generation</th>
               <th class="table-title">Fitness</th>
@@ -55,4 +54,5 @@
       <button class="button" type="button">Start</button>
     </div>
   </body>
+  <script src="bundle.js"></script>
 </html>

@@ -14,6 +14,7 @@ class Population {
 
     this.createPopulation();
     this.calcPopFitness();
+    this.updateBestFitnessAndPhrase();
   }
 
   createPopulation() {
@@ -31,18 +32,22 @@ class Population {
     return this;
   }
 
-  naturalSelection() {
-    this.potentialParents = [];
+  updateBestFitnessAndPhrase() {
     this.bestFitness = 0;
+    this.bestPhrase = "";
     this.currentPopulation.forEach((phrase, idx) => {
       if (phrase.fitness > this.bestFitness) {
         this.bestFitness = phrase.fitness;
-        this.bestPhrase = this.currentPopulation[idx].getPhase;
+        this.bestPhrase = this.currentPopulation[idx].getPhrase();
         if (phrase === this.targetPhrase) {
           this.completed = true;
         }
       }
     });
+  }
+
+  naturalSelection() {
+    this.potentialParents = [];
 
     this.currentPopulation.forEach((phrase) => {
       let n = Math.floor(phrase.fitness);
@@ -69,6 +74,7 @@ class Population {
       this.currentPopulation[i] = offspring;
     }
     this.calcPopFitness();
+    this.updateBestFitnessAndPhrase();
     this.generation++;
     return this;
   }
@@ -106,13 +112,14 @@ class Population {
   }
 }
 
-module.export = Population;
+module.exports = Population;
 
 //testing
-let a = new Population("helfsmjfhksdhlfl askjhlo", 1, 100);
-console.log(a);
-console.log(a.naturalSelection());
+// let a = new Population("helfsmjfhksdhlfl askjhlo", 1, 100);
+// console.log(a);
+// console.log(a.naturalSelection());
 // console.log(a.generate());
 // console.log(a.naturalSelection());
 // console.log(a.generate());
-// console.log(a.getBestFitness());
+// console.log(a.getAllPhrase());
+// console.log(a.getAverageFitness());
