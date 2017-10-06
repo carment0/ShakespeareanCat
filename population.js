@@ -93,11 +93,18 @@ class Population {
       this.topBestPhrase.unshift(this.bestPhrase);
     }
     console.log(this.topBestPhrase);
+    this.updateTable();
   }
 
   updateTable() {
+    const table = document.getElementById("table");
+    while (table.firstChild) {
+        table.removeChild(table.firstChild);
+    }
     this.topBestPhrase.forEach((phrase) => {
-
+      let row = document.createElement("tr");
+      row.innerHTML = phrase;
+      table.appendChild(row);
     });
   }
 
