@@ -13,6 +13,7 @@ class Population {
     this.bestFitness = 0;
 
     this.createPopulation();
+    this.calcPopFitness();
   }
 
   createPopulation() {
@@ -50,6 +51,7 @@ class Population {
         this.potentialParents.push(phrase);
       }
     });
+    return this;
   }
 
   generate() {
@@ -61,10 +63,14 @@ class Population {
       let parentA = this.potentialParents[parentOneIdx];
       let parentB = this.potentialParents[parentTwoIdx];
       let offspring = parentA.crossover(parentB);
+
       offspring = offspring.mutation(this.mutationRate);
+
       this.currentPopulation[i] = offspring;
     }
+    this.calcPopFitness();
     this.generation++;
+    return this;
   }
 
   isPhraseFound() {
@@ -101,3 +107,12 @@ class Population {
 }
 
 module.export = Population;
+
+//testing
+let a = new Population("helfsmjfhksdhlfl askjhlo", 1, 100);
+console.log(a);
+console.log(a.naturalSelection());
+// console.log(a.generate());
+// console.log(a.naturalSelection());
+// console.log(a.generate());
+// console.log(a.getBestFitness());

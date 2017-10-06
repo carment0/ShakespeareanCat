@@ -17,6 +17,7 @@ class DNA {
       }
     }
     this.fitness = (score / target.length) * 100;
+    return this.fitness;
   }
 
   getPhrase() {
@@ -35,7 +36,6 @@ class DNA {
         offspring.genes[i] = partner.genes[i];
       }
     }
-    console.log(offspring);
     return offspring;
   }
 
@@ -46,18 +46,21 @@ class DNA {
         this.genes[i] = String.fromCharCode(randomChar);
       }
     }
+    return this;
   }
 }
 
 module.exports = DNA;
 
-//testing
+// testing
 // let a = new DNA(5);
 // let b = new DNA(5);
 // console.log(a);
+// console.log(b);
 // console.log("fitness: " + a.calculateFitness("hello"));
-// console.log(a);
-// console.log("phrase: " + a.phrase());
-// console.log("recombine: " + a.recombine(b));
-// console.log("mutation: " + a.mutationLevel(0.60));
-// console.log(a);
+// // console.log(a);
+// console.log("phrase: " + a.getPhrase());
+// console.log("crossover: " + a.crossover(b));
+// let c = a.crossover(b);
+// console.log("mutation: " + c.mutation(0.60));
+// // console.log(a);
