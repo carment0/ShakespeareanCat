@@ -1,34 +1,40 @@
-const Population = require("./population");
+import Population from './population';
 
 document.addEventListener("DOMContentLoaded", () => {
-  const start = new Evolution();
-  console.log("dlkfjgld");
-  debugger
+  document.getElementById("start").onclick = function() {new Main;};
 });
 
-class Evolution {
-  constructor(target = "To meow, or not to meow, that is the meowstion.",
+
+class Main {
+  constructor(target = "To meow, or not to meow",
             population = 200, mutation = 1) {
     this.target = target;
     this.population = population;
     this.mutation = mutation;
 
     let create = new Population(this.target, this.mutation, this.population);
-
-    // this.draw(create);
+    console.log(create);
+    this.draw(create);
   }
 
   draw(population) {
     // console.log(population);
-    while (!population.isPhraseFound) {
+    console.log(population.isPhraseFound());
+    while (!population.isPhraseFound()) {
       population.naturalSelection();
       population.generate();
+      population.updateBestFitnessAndPhrase();
+      population.getGeneration();
+      population.getAverageFitness();
     }
     population.getBestPhrase();
-    population.getBestFitness();
+    console.log(population.getBestFitness());
   }
+
+
 }
 
+export default Main;
 // module.exports = Evolution;
 
 // function renderRow(phrase) {

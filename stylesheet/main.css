@@ -83,6 +83,7 @@ html, body, h1, h2, h3, h4, h5 {
 
 .phrase-box {
   color: #47476b;
+
 }
 
 
@@ -107,4 +108,13 @@ th {
 
 .table-title {
   width: 7rem;
+}
+
+.parameters {
+  display: flex;
+  flex-direction: column;
+}
+
+.phrase {
+  width: 400px;
 }

@@ -50,7 +50,7 @@ class DNA {
   }
 }
 
-module.exports = DNA;
+export default DNA;
 
 // testing
 // let a = new DNA(5);

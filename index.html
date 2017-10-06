@@ -16,42 +16,43 @@
     <div class="main">
       <div class="main-phrase">
         <div>
-          <h3 class="phrase-box">Enter your phrase or use default</h3>
+          <h3 class="phrase">Push start to of see how long it would take for our  Shakespearean cat to type this phase!</h3>
           <form>
-            <textarea class="user-phrase">To meow, or not to meow, that is the meowstion.</textarea>
+            <textarea class="user-phrase">To meow, or not to meow</textarea>
           </form>
         </div>
-        <div>
+        <div class="parameters">
           <h3 class="phrase-box">Parameters</h3>
           <br>
-          <h4>Total Generation:</h4>
-          <br>
-          <h4>Average Fitness:</h4>
-          <br>
           <h4>Total Popultion:</h4>
+          <p>200</p>
           <br>
           <h4>Mutation Rate:</h4>
+          <p>1%</p>
+          <br>
+          <h4 id="total-gen">Total Generation:</h4>
+          <p id="updated-gen">0</p>
+          <br>
+          <h4 id="avg-fitness">Average Fitness:</h4>
+          <p id="updated-fitness">0</p>
+          <br>
+          <button class="button" id="start" type="button">Start</button>
         </div>
       </div>
       <div class="result">
         <div >
           <table style="overflow-x:auto;" id="table">
             <tr>
-              <th class="table-title">Generation</th>
               <th class="table-title">Fitness</th>
               <th>Best Phrase</th>
             </tr>
             <tr>
-              <td>1</td>
-              <td>24%</td>
-              <td>"uhhhkfgjlksdfjgsjdfgsdfl;g"</td>
+              <td></td>
+              <td></td>
             </tr>
           </table>
         </div>
       </div>
-    </div>
-    <div class="footer">
-      <button class="button" type="button">Start</button>
     </div>
   </body>
   <script src="bundle.js"></script>

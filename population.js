@@ -1,4 +1,4 @@
-const DNA = require("./dna");
+import DNA from './dna';
 
 class Population {
   constructor(targetPhrase, mutationPercentage, populationSize) {
@@ -11,6 +11,7 @@ class Population {
     this.generation = 0;
     this.bestPhrase = "";
     this.bestFitness = 0;
+    this.topBestPhrase = [];
 
     this.createPopulation();
     this.calcPopFitness();
@@ -37,9 +38,13 @@ class Population {
     this.bestPhrase = "";
     this.currentPopulation.forEach((phrase, idx) => {
       if (phrase.fitness > this.bestFitness) {
+
         this.bestFitness = phrase.fitness;
         this.bestPhrase = this.currentPopulation[idx].getPhrase();
-        if (phrase === this.targetPhrase) {
+        console.log("target:" + phrase.getPhrase());
+        console.log(this.targetPhrase);
+        if (phrase.getPhrase() === this.targetPhrase) {
+          console.log("completed is true");
           this.completed = true;
         }
       }
@@ -75,8 +80,25 @@ class Population {
     }
     this.calcPopFitness();
     this.updateBestFitnessAndPhrase();
+    this.updateTopPhraseAndGen();
     this.generation++;
     return this;
+  }
+
+  updateTopPhraseAndGen() {
+    if (this.topBestPhrase.length === 30) {
+      this.topBestPhrase.pop();
+      this.topBestPhrase.unshift(this.bestPhrase);
+    } else {
+      this.topBestPhrase.unshift(this.bestPhrase);
+    }
+    console.log(this.topBestPhrase);
+  }
+
+  updateTable() {
+    this.topBestPhrase.forEach((phrase) => {
+
+    });
   }
 
   isPhraseFound() {
@@ -92,6 +114,7 @@ class Population {
   }
 
   getBestFitness() {
+    document.getElementById("updated-gen").innerHTML = this.generation;
     return this.bestFitness;
   }
 
@@ -100,7 +123,9 @@ class Population {
     this.currentPopulation.forEach((phrase) => {
       totalFitness += phrase.fitness;
     });
-    return totalFitness / this.populationSize;
+
+    let total = totalFitness / this.populationSize;
+    document.getElementById("updated-fitness").innerHTML = total + "%";
   }
 
   getAllPhrase() {
@@ -112,7 +137,7 @@ class Population {
   }
 }
 
-module.exports = Population;
+export default Population;
 
 //testing
 // let a = new Population("helfsmjfhksdhlfl askjhlo", 1, 100);
